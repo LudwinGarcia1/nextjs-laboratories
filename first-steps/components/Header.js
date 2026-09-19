@@ -1,7 +1,10 @@
+import Link from "next/link";
+import NavigationLink from "@/components/NavigationLink";
+
 export default function Header() {
     return (
         <header className="flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-4 border-b border-zinc-200 px-6 pt-5 pb-5 sm:px-10 lg:px-16 dark:border-zinc-800">
-            <a
+            <Link
                 href="/"
                 className="group flex items-center gap-2 text-lg font-semibold tracking-tight text-zinc-900 dark:text-white"
                 aria-label="UTVT, inicio"
@@ -19,33 +22,18 @@ export default function Header() {
                     <path d="M18 8H47" stroke="#00843D" strokeWidth="5" strokeLinecap="square" />
                 </svg>
                 <span>UTVT</span>
-            </a>
+            </Link>
 
             <nav aria-label="Navegacion principal" className="order-3 w-full sm:order-0 sm:w-auto">
                 <ul className="flex items-center gap-5 overflow-x-auto text-sm font-medium text-zinc-600 dark:text-zinc-400">
                     <li>
-                        <a
-                            href="/"
-                            className="whitespace-nowrap transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
-                        >
-                            Mi carrera
-                        </a>
+                        <NavigationLink href="/">Mi carrera</NavigationLink>
                     </li>
                     <li>
-                        <a
-                            href="/about"
-                            className="whitespace-nowrap transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
-                        >
-                            Acerca de
-                        </a>
+                        <NavigationLink href="/about">Acerca de</NavigationLink>
                     </li>
                     <li>
-                        <a
-                            href="/blog"
-                            className="whitespace-nowrap transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
-                        >
-                            Blog
-                        </a>
+                        <NavigationLink href="/blog">Blog</NavigationLink>
                     </li>
                     <li>
                         <a
