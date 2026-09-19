@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NotFound() {
     return (
         <main className="flex flex-1 items-center bg-[#f5f7f3] px-6 py-12 text-[#123044] lg:px-10">
@@ -11,15 +13,15 @@ export default function NotFound() {
                         La dirección que buscas no está disponible o pudo haber cambiado. Regresa al inicio para continuar explorando.
                     </p>
                     <div className="mt-10 flex flex-wrap items-center gap-5">
-                        <a
+                        <Link
                             href="/"
                             className="inline-flex items-center rounded-md bg-[#123044] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#177e89] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177e89]"
                         >
                             Ir al inicio
-                        </a>
-                        <a href="/blog" className="text-sm font-bold text-[#177e89] underline decoration-2 underline-offset-4 transition-colors hover:text-[#123044]">
+                        </Link>
+                        <Link href="/blog" className="text-sm font-bold text-[#177e89] underline decoration-2 underline-offset-4 transition-colors hover:text-[#123044]">
                             Ver el blog
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
