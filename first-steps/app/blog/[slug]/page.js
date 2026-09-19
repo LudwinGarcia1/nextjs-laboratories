@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 const blogPosts = {
     "actualidad-tecnologica": {
         title: "Actualidad tecnológica",
@@ -22,9 +24,17 @@ const blogPosts = {
     },
 };
 
+export function generateStaticParams() {
+    return Object.keys(blogPosts).map((slug) => ({ slug }));
+}
+
 export default async function BlogPostPage({ params }) {
     const { slug } = await params;
     const post = blogPosts[slug];
+
+    if (!post) {
+        notFound();
+    }
 
     return (
         <div className="mx-auto max-w-3xl px-6 py-12">
